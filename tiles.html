@@ -1,0 +1,673 @@
+<html>
+<head>
+	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> ZeezoCasing </title>
+<link rel="stylesheet" href= "https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<style>
+* {
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dddddd;
+}
+
+
+/*navigation bar css */
+
+.topnav{
+	background-color: black; 
+	position: fixed;
+	top: 0; 
+	width: 100%;
+	height: 80px;
+	z-index: 1;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.dropdown {
+	float: left;
+}
+.dropdown-content {
+	display: block;
+	float: left;
+	z-index: 1;
+	margin-top: 60px;
+	background-color: black;
+}
+.dropdown-content a{
+	float: none;
+	display: block;
+	text-align: left;
+	z-index: 1;
+}
+.dropdown a{
+	font-family:inherit;
+	margin: 0;
+}
+.dropdown .dropdown-content{
+	display: none;
+}
+.topnav a:hover, dropdown:hover .a{
+	background-color: #353535;
+}
+.dropdown-content a:hover{
+	background-color: #353535;
+}
+
+.dropdown:hover .dropdown-content {
+	display:block;
+	position:absolute;
+}
+.topnav a:hover {
+  background-color: #353535;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: black;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+
+/*End navigation bar css */
+
+.container{
+	min-height: 100vh;
+	width: 100%;
+	display: block;
+	position:relative;
+	justify-content: center;
+}
+
+
+
+
+#more .cta{
+	display: inline-block;
+	padding: 10px 25px;
+	color: white;
+	background-color: black;
+	font-size: 32px;
+	text-transform: uppercase;
+	letter-spacing: 0.16px;
+	transition: 0.3s ease ;
+	transition-property: background-color, color;
+	height: 50px;
+}
+#more .cta:hover{
+	color: black;
+	background-color: #dddddd;
+}
+#more a{
+	position:top;
+	height:10px;
+	text-align: center;
+	padding: 10px;
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 475px;
+	justify-content: center;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#btn{
+  background-color: #FFD79A;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#btn:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+    border-radius:10px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+	position: relative;
+}
+
+img.avatar {
+	width: 40%;
+	border-radius: 50%;
+}
+
+.Lcontainer {
+	padding: 8px;
+	border-radius: 15px;
+	color:white;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgba(0,0,0,0.6);
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+  border-radius: 15px;
+}
+
+.modal-content h2{
+		text-align: center;
+		 color:  #FFD79A;
+		 letter-spacing: 3px;
+		 font-size: 40px;
+		 position: center;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+form input:focus::placeholder,form textarea:focus::placeholder{
+            padding-left: 4px;
+			transition: all 0.3s ease;
+		}
+form input:focus,form textarea:focus{
+			border:1px solid #FFD79A;
+			transition: all 0.3s ease;
+		}
+		
+/*footer css*/
+.footer {	
+	text-align: center;
+	padding: 50px;
+	background-color: #303030;
+	
+}
+/*End footer css*/
+
+/*all collection*/
+.collection{
+padding-top:7%;
+
+}
+
+.collection h1{
+width: 70%;
+background-color:transparent;
+	margin: 0 auto;
+	padding: 10px 50px;
+	justify-content: center;
+	display: block;
+}
+
+
+#cole {
+	float:left;
+	padding-top: 2%;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid grey;
+  float: left;
+  width: 75%;
+  height:45%;
+  display: inline;
+}
+
+div.gallery:hover {
+  border: 2px solid #777;
+}
+
+div.gallery img {
+ max-width:345px;
+  width: 100%;
+  height: auto;
+  padding:3%;
+}
+
+div.desc {
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-left: 10%;
+  text-align:center;
+  float: right;
+  
+}
+
+  select, textarea{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.container2 {
+  border-radius: 5px;
+  float:right;
+}
+
+.col-75 {
+  float: right;
+  width: 100%;
+  margin-top: 2px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.con {
+  padingg:20px;
+
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+</style>
+</head>
+<body>
+
+<!--main section -->
+
+	<!-- navbar-->
+	<div class="topnav" id="myTopnav">
+		<a href="index.html"><img src="pic/zicon.png" style="display:block;width:56.25px;height:50px;margin-left:5%;"></a>
+		<a href="index.html" style="margin-top:15px;margin-left:15px;">Home</a>
+		<div class="dropdown">
+			<a class="active" href="allcollection.html" style="margin-top:15px;">Collection</a>
+			<div class="dropdown-content">
+				<a href="allcollection.html">All</a>
+				<a href="leather.html">Leather</a>
+				<a href="mandala.html">Mandala</a>
+				<a href="flora.html">Flora</a>
+				<a href="fauna.html">Fauna</a>
+				<a href="tiedie.html">Tie-Dye</a>
+				<a class="active" href="tiles.html">Tiles</a>
+				<a href="jalantegak.html">Jalan Tegak</a>
+			</div>
+		</div>
+		<a href="aboutus.html" style="margin-top:15px;">About Us</a>
+		<a href="faq.html" style="margin-top:15px;">FAQ</a>
+		<div class="search-container" style="margin-top:15px;">
+		
+			<form action="/action_page.php" style="display:inline-block;">	
+				<input type="text" placeholder="Search.." name="search">
+				<a href="addtocart.html" type="button"><i class="fa fa-shopping-bag" aria-hidden="true" style="font-size:px14;"></i></a>
+				<a href="#" type="button"><i class="fa fa-search"></i></a>
+			</form>
+			<button onclick="document.getElementById('id01').style.display='inline-block'"><i class="fas fa-user-circle" style="font-size:20px;"></i></button>
+		</div>
+				
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<!--End navbar-->
+	<!--all collection -->	
+	<section id="collection">
+		<div class="collection container">
+			<h1 style="color: black; font-size: 30px; text-align:left;letter-spacing:20px;"><strong>TILES COLLECTION</strong></h1>
+		
+				<section id="cole" style="padding-left:18%;padding-right:3%">
+					<div class="gallery">
+						<a target="_blank" href="#">
+							<img src="pic/5.jpg" alt="Cinque Terre" width="600" height="400">
+						</a>
+					<div class="desc">Casablanca Tiles<p style="color: grey;">  RM39.00</p>
+						<div class="container2">
+							<form action="#">
+								<div class="row">
+									<div class="col-75">
+										<select id="country" name="country" >
+											<option class ="op" id="selected" style="color:grey"value="" selected data-default>iPhone 	 Model</option>
+											<option class ="op" value="78">7/8</option>
+											<option class ="op" value="78p">7P/8P</option>
+											<option class ="op" value="xxs">X/XS</option>
+											<option class ="op" value="xr">XR</option>
+											<option class ="op" value="xsmax">XS MAX</option>
+											<option class ="op" value="11">11</option>
+											<option class ="op" value="11pro">11 PRO</option>
+											<option class ="op" value="11prom">11 PRO MAX</option>
+											<option class ="op" value="12mini">12 MINI</option>
+											<option class ="op" value="1212pro">12/12 PRO</option>
+											<option class ="op" value="12prom">12 PRO MAX</option>
+										</select>
+										<input type="submit" value="Add to Cart">
+									</div>
+								</div>
+							</form>
+						</div>
+					
+					</div>
+						
+					</div>
+					
+					<div class="gallery">
+						<a target="_blank" href="#">
+							<img src="pic/6.jpg" alt="Cinque Terre" width="600" height="400">
+						</a>
+					<div class="desc">Marrakech Tiles<p style="color: grey;">RM39.00</p>
+						<div class="container2">
+							<form action="#">
+								<div class="row">
+									<div class="col-75">
+										<select id="country" name="country" >
+											<option class ="op" id="selected" style="color:grey"value="" selected data-default>iPhone 	 Model</option>
+											<option class ="op" value="78">7/8</option>
+											<option class ="op" value="78p">7P/8P</option>
+											<option class ="op" value="xxs">X/XS</option>
+											<option class ="op" value="xr">XR</option>
+											<option class ="op" value="xsmax">XS MAX</option>
+											<option class ="op" value="11">11</option>
+											<option class ="op" value="11pro">11 PRO</option>
+											<option class ="op" value="11prom">11 PRO MAX</option>
+											<option class ="op" value="12mini">12 MINI</option>
+											<option class ="op" value="1212pro">12/12 PRO</option>
+											<option class ="op" value="12prom">12 PRO MAX</option>
+										</select>
+										<input type="submit" value="Add to Cart">
+									</div>
+								</div>
+							</form>
+						</div>
+					
+					</div>
+						
+					</div>
+
+										
+				</section>
+		<section id="cole" style="width:100%;height: 10vh;bottom:0;padding-top:5%;">
+			<div class="footer" style="border-top: 1px solid #63A6EB;">© Copyright ZeezoCasing, 2021</footer>
+		<section>				
+		</div>
+		
+	</section>
+
+	
+	<!--end all collection -->
+<!--login-->	
+	<div id="id01" class="modal">
+  
+		<form class="modal-content animate" action="/action_page.php" method="post">
+    
+
+		<h2>ZEEZO CASING</h2>
+	
+		<div class="Lcontainer" >
+		<div>
+		  <label for="uname" ><b>Username</b></label>
+		  <input type="text" style="width: 100%;margin-bottom: 30px;" placeholder="Enter Username" name="uname" required>
+		</div>
+		<div>
+		  <label for="psw" ><b>Password</b></label>
+		  <input type="password" style="width: 100%;" placeholder="Enter Password" name="psw" required>
+		</div>
+		<div>
+		  <button id="btn" type="submit">Login</button>
+		  <label>
+		</div>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		  </label>
+		</div>
+
+		<div class="Lcontainer" style="background-color:#f1f1f1;margin: 20px;">
+			<div>
+			  <button  type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">cancel </button>
+			  <span class="psw"><a href="register.html">sign up</a></span>
+			</div>
+			
+		</div>
+		</form>
+	</div>
+
+<!--login end-->
+<!--start script section-->
+<!--nav-->
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<!--nav end-->
+
+<!--slide-->
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<!--slide end-->
+
+<!--login-->
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<!--login end-->
+<!--End script section-->
+<!--footer-->
+
+
+</body>
+</html>
